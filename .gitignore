@@ -162,7 +162,8 @@ cython_debug/
 #.idea/
 
 # Ignore Indexing directory
-indexing/
+indexing/cache/
+indexing/output/
 
 # Ignore Graphrag directory
 graphrag/
