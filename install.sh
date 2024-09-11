@@ -34,3 +34,6 @@ cp ./overrides/graphrag/graphrag/llm/openai/openai_embeddings_llm.py ./graphrag/
 
 # Install requirements.txt
 pip install -r requirements.txt
+
+ollama pull mistral
+ollama pull nomic-embed-text
