@@ -4,12 +4,19 @@ This project aims to provide a way to effectively implement a GraphRag solution 
 It is meant to provide a good head start without having to develop something from scratch.
 
 ## Installation
+This installation is meant for linux.
 
 ### 0. Install prerequisits
 
 Ollama
 
 Poetry
+
+## .. Clone repo where you want to install it
+git clone https://github.com/pixelkey/gragl.git
+
+## Enter folder
+cd gragl
 
 ### 1. Create a virtual environment using Python 3.11.8
 conda create -n gragl python=3.11.8 -y

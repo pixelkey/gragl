@@ -19,6 +19,9 @@ fi
 # Install dependencies using poetry (from pyproject.toml)
 poetry install
 
+# Rename the indexing folder to avoid conflicts with the graphrag package
+mv ../indexing ../init/indexing
+
 # Initialize the indexing folder using graphrag.index
 poetry run python3 -m graphrag.index --init --root ../indexing
 
@@ -53,6 +56,9 @@ find ./init -type f | while read src_file; do
         cp "$src_file" "$target_file"
     fi
 done
+
+# We no longer need the init/indexing folder
+rm -rf ./init/indexing
 
 # Install dependencies from requirements.txt
 pip install -r requirements.txt
