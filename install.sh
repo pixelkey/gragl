@@ -6,12 +6,12 @@ git clone https://github.com/microsoft/graphrag.git
 # Navigate into the graphrag directory
 cd graphrag
 
-# Check if poetry is installed, if not, install it
+# Check if poetry is installed, if not, notify the user and exit
 if ! command -v poetry &> /dev/null
 then
-    echo "Poetry could not be found. Installing poetry..."
-    curl -sSL https://install.python-poetry.org | python3 -
-    export PATH="$HOME/.local/bin:$PATH"
+    echo "Error: Poetry could not be found. Please install poetry before running this script."
+    echo "Visit https://python-poetry.org/docs/#installation for installation instructions."
+    exit 1
 else
     echo "Poetry is already installed"
 fi

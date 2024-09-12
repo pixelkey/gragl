@@ -1,49 +1,82 @@
 # GraphRag Ollama Local
+
 GraphRag and Local LLMs. Stay tuned for more updates.
 This project aims to provide a way to effectively implement a GraphRag solution that is cost effective and simple to work with.
 It is meant to provide a good head start without having to develop something from scratch.
 
 ## Installation
-This installation is meant for linux.
+This installation is meant for Linux.
 
-### 0. Install prerequisits
+### 0. Install prerequisites
 
-Ollama
+- Ollama: https://ollama.com/
+- Poetry: https://python-poetry.org/
 
-Poetry
+### 1. Clone the repository where you want to install it
 
-### 1. Clone repo where you want to install it
+```bash
 git clone https://github.com/pixelkey/gragl.git && cd gragl
+```
 
-### 2. Create a virtual environment using Python 3.11.8
+### 2. Make install.sh executable
+
+```bash
+chmod +x install.sh
+```
+
+By default, install.sh might not be executable. This command ensures it can be run directly.
+
+### 3. Create a virtual environment using Python 3.11.8
+
+```bash
 conda create -n gragl python=3.11.8 -y
+```
 
-### 3. Activate the virtual environment
+### 4. Activate the virtual environment
+
+```bash
 conda activate gragl
+```
 
-### 4. Run install.sh file. This will also install poetry if you don't have it installed already
+### 5. Run the install.sh file.
+
+```bash
 ./install.sh
+```
 
-### 5. Add input files to ingest 
+### 6. Add input files to ingest
+
 Place an example text file into ./indexing/input or use the examples already there.
 
-### 6. Run the graphrag indexing
+### 7. Run the GraphRag indexing
+
+```bash
 python3 -m graphrag.index --root ./indexing
+```
 
-Note: If you don't have enough data/files available, it might fail with an error like this: WARNING Graph has no nodes
+Note: If you don't have enough data/files available, it might fail with an error like this:
+WARNING: Graph has no nodes.
 
+---
 
 ## Other Commands - Deactivate and Uninstall
 
 ### To deactivate
+
+```bash
 conda deactivate
+```
 
-### If you need to uninstall/remove conda 
+### If you need to uninstall/remove the Conda environment
+
+```bash
 conda remove --name gragl --all
+```
 
+---
 
 ## Troubleshooting
-In order to get it working locally, a hack was needed to replace the way openai_embeddings_llm.py works.
-For more information and other potential updates regarding this hack, refer to the following:
+
+In order to get it working locally, a hack was needed to replace the way openai_embeddings_llm.py works. For more information and other potential updates regarding this hack, refer to the following:
 
 https://github.com/microsoft/graphrag/issues/345
