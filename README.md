@@ -6,11 +6,13 @@ It is meant to provide a good head start without having to develop something fro
 ## Installation
 
 ### 0. Install prerequisits
+
 Ollama
+
 Poetry
 
 ### 1. Create a virtual environment using Python 3.11.9
-conda create -n gragl python=3.11.9 -y
+conda create -n gragl python=3.11.8 -y
 
 ### 2. Activate the virtual environment
 conda activate gragl

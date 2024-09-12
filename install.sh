@@ -28,12 +28,35 @@ cd ..
 # Install the repository in editable mode
 pip install -e ./graphrag
 
-# Replace the file in the graphrag folder structure with the override file
-echo "Replacing openai_embeddings_llm.py with the override version..."
-cp ./overrides/graphrag/graphrag/llm/openai/openai_embeddings_llm.py ./graphrag/graphrag/llm/openai/openai_embeddings_llm.py
+# Automatically replace or add files from the init folder to the project
+echo "Processing files from init folder..."
 
-# Install requirements.txt
+# Loop through all files in the init folder and copy them to the corresponding locations in the project
+find ./init -type f | while read src_file; do
+    # Determine the relative path of the file in the init directory
+    relative_path="${src_file#./init/}"
+
+    # Define the corresponding target file path in the project directory
+    target_file="./$relative_path"
+
+    # Check if the target file exists
+    if [ -f "$target_file" ]; then
+        # If the file exists, replace it
+        echo "Replacing $target_file with $src_file"
+        cp "$src_file" "$target_file"
+    else
+        # If the file doesn't exist, add it
+        echo "Adding new file $target_file from $src_file"
+        # Create the directory structure if it doesn't exist
+        mkdir -p "$(dirname "$target_file")"
+        # Copy the new file
+        cp "$src_file" "$target_file"
+    fi
+done
+
+# Install dependencies from requirements.txt
 pip install -r requirements.txt
 
+# Pull the required models using ollama
 ollama pull mistral
 ollama pull nomic-embed-text
