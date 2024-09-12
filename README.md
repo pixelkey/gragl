@@ -32,8 +32,7 @@ conda activate gragl
 ### 5. Run the graphrag indexing
 python3 -m graphrag.index --root ./indexing
 
-
-
+Note: If you don't have enough data/files available, it might fail with an error like this: WARNING Graph has no nodes
 
 
 ## Other Commands - Deactivate and Uninstall
