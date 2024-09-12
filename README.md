@@ -11,7 +11,7 @@ Ollama
 
 Poetry
 
-### 1. Create a virtual environment using Python 3.11.9
+### 1. Create a virtual environment using Python 3.11.8
 conda create -n gragl python=3.11.8 -y
 
 ### 2. Activate the virtual environment
