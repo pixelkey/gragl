@@ -12,24 +12,22 @@ Ollama
 
 Poetry
 
-## .. Clone repo where you want to install it
-git clone https://github.com/pixelkey/gragl.git
+### 1. Clone repo where you want to install it
+git clone https://github.com/pixelkey/gragl.git && cd gragl
 
-## Enter folder
-cd gragl
-
-### 1. Create a virtual environment using Python 3.11.8
+### 2. Create a virtual environment using Python 3.11.8
 conda create -n gragl python=3.11.8 -y
 
-### 2. Activate the virtual environment
+### 3. Activate the virtual environment
 conda activate gragl
 
-### 3. Run install.sh file. This will also install poetry if you don't have it installed already
+### 4. Run install.sh file. This will also install poetry if you don't have it installed already
 ./install.sh
 
-### 4. Place an example text file into ./indexing/input
+### 5. Add input files to ingest 
+Place an example text file into ./indexing/input or use the examples already there.
 
-### 5. Run the graphrag indexing
+### 6. Run the graphrag indexing
 python3 -m graphrag.index --root ./indexing
 
 Note: If you don't have enough data/files available, it might fail with an error like this: WARNING Graph has no nodes
