@@ -35,4 +35,4 @@ python3 -m graphrag.index --root ./indexing
 conda deactivate
 
 ### If you need to uninstall/remove conda 
-conda remove --name graphrag-local --all
+conda remove --name gragl --all
