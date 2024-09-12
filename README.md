@@ -45,5 +45,7 @@ conda remove --name gragl --all
 ## Troubleshooting
 In order to get it working locally, a hack was needed to replace the way openai_embeddings_llm.py works.
 For more information and other potential updates regarding this hack, refer to the following:
+
 https://github.com/microsoft/graphrag/issues/345
+
 https://www.youtube.com/watch?v=6Yu6JpLMWVo
