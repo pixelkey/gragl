@@ -5,8 +5,9 @@ llm:
   api_key: ${GRAPHRAG_API_KEY}
   type: openai_chat # or azure_openai_chat
   model: mistral:7b
+  # next try llama3.1:8b
   model_supports_json: true # recommended if this is available for your model.
-  max_tokens: 4096
+  max_tokens: 32000
   # request_timeout: 180.0
   api_base: http://localhost:11434/v1
   # api_version: 2024-02-15-preview
@@ -89,15 +90,15 @@ entity_extraction:
   ## parallelization: override the global parallelization settings for this task
   ## async_mode: override the global async_mode settings for this task
   prompt: "prompts/entity_extraction.txt"
-  entity_types: [organization,person,geo,event]
-  max_gleanings: 1
+  # entity_types: [organization,person,geo,event]
+  max_gleanings: 20
 
 summarize_descriptions:
   ## llm: override the global llm settings for this task
   ## parallelization: override the global parallelization settings for this task
   ## async_mode: override the global async_mode settings for this task
   prompt: "prompts/summarize_descriptions.txt"
-  max_length: 500
+  max_length: 1000
 
 claim_extraction:
   ## llm: override the global llm settings for this task
@@ -106,7 +107,7 @@ claim_extraction:
   # enabled: true
   prompt: "prompts/claim_extraction.txt"
   description: "Any claims or facts that could be relevant to information discovery."
-  max_gleanings: 1
+  max_gleanings: 10
 
 community_reports:
   ## llm: override the global llm settings for this task
@@ -128,10 +129,10 @@ embed_graph:
   # random_seed: 597832
 
 umap:
-  enabled: false # if true, will generate UMAP embeddings for nodes
+  enabled: true # if true, will generate UMAP embeddings for nodes
 
 snapshots:
-  graphml: false
+  graphml: true
   raw_entities: false
   top_level_nodes: false
 
