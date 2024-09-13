@@ -169,3 +169,6 @@ indexing/prompts/
 
 # Ignore Graphrag directory
 /graphrag/
+
+# Ignore Temp directory
+temp/
