@@ -64,5 +64,5 @@ rm -rf ./init/indexing
 pip install -r requirements.txt
 
 # Pull the required models using ollama
-ollama pull mistral
+ollama pull mistral-nemo:12b-instruct-2407-fp16
 ollama pull nomic-embed-text

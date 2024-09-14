@@ -80,3 +80,7 @@ conda remove --name gragl --all
 In order to get it working locally, a hack was needed to replace the way openai_embeddings_llm.py works. For more information and other potential updates regarding this hack, refer to the following:
 
 https://github.com/microsoft/graphrag/issues/345
+
+### GPU Requirements
+Let's be honest, GraphRag requires some serious LLM grunt. Trying to get away with something like Mistral:7b is just not going to cut it.
+The results will be subpar and simply not worth it. You need to use something like mistral-nemo or mistral-nemo:12b-instruct-2407-fp16. 

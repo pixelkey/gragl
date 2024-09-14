@@ -4,8 +4,7 @@ skip_workflows: []
 llm:
   api_key: ${GRAPHRAG_API_KEY}
   type: openai_chat # or azure_openai_chat
-  model: mistral:7b
-  # next try llama3.1:8b
+  model: mistral-nemo:12b-instruct-2407-fp16
   model_supports_json: true # recommended if this is available for your model.
   max_tokens: 32000
   # request_timeout: 180.0
@@ -91,7 +90,7 @@ entity_extraction:
   ## async_mode: override the global async_mode settings for this task
   prompt: "prompts/entity_extraction.txt"
   # entity_types: [organization,person,geo,event]
-  max_gleanings: 20
+  max_gleanings: 100
 
 summarize_descriptions:
   ## llm: override the global llm settings for this task
@@ -107,7 +106,7 @@ claim_extraction:
   # enabled: true
   prompt: "prompts/claim_extraction.txt"
   description: "Any claims or facts that could be relevant to information discovery."
-  max_gleanings: 10
+  max_gleanings: 100
 
 community_reports:
   ## llm: override the global llm settings for this task
