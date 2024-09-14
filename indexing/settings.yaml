@@ -114,7 +114,7 @@ community_reports:
   ## async_mode: override the global async_mode settings for this task
   prompt: "prompts/community_report.txt"
   max_length: 2000
-  max_input_length: 4000
+  max_input_length: 8000
 
 cluster_graph:
   max_cluster_size: 10
@@ -132,8 +132,8 @@ umap:
 
 snapshots:
   graphml: true
-  raw_entities: false
-  top_level_nodes: false
+  raw_entities: true
+  top_level_nodes: true
 
 local_search:
   # text_unit_prop: 0.5
