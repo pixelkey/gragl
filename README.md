@@ -46,16 +46,28 @@ conda activate gragl
 
 ### 6. Add input files to ingest
 
-Place an example text file into ./indexing/input or use the examples already there.
+Place your text files into ./indexing/input or use the examples already there.
 
 ### 7. Run the GraphRag indexing
 
 ```bash
 python3 -m graphrag.index --root ./indexing
 ```
+Reference: https://microsoft.github.io/graphrag/posts/config/init/
 
-Note: If you don't have enough data/files available, it might fail with an error like this:
-WARNING: Graph has no nodes.
+### 8 Prompt Tuning - optional
+You can auto-tune your prompts to be more relevant to your content's domain.
+Note: The output folder populated from the last step is needed for this to work.
+```bash
+python3 -m graphrag.prompt_tune --root ./indexing --config ./settings.yaml --no-entity-types
+```
+Reference: https://microsoft.github.io/graphrag/posts/prompt_tuning/auto_prompt_tuning/
+
+After reviewing the prompt updates and if you are happy with the results, re-run the indexing (step 7).
+
+### Query 
+Reference: https://microsoft.github.io/graphrag/posts/query/overview/
+
 
 ---
 
@@ -83,4 +95,8 @@ https://github.com/microsoft/graphrag/issues/345
 
 ### GPU Requirements
 Let's be honest, GraphRag requires some serious LLM grunt. Trying to get away with something like Mistral:7b is just not going to cut it.
-The results will be subpar and simply not worth it. You need to use something like mistral-nemo or mistral-nemo:12b-instruct-2407-fp16. 
+The results will be subpar and simply not worth it. You need to use something like mistral-nemo or mistral-nemo:12b-instruct-2407-fp16.
+
+### Not enough data
+If you don't have enough data/files available, it might fail with an error like this:
+WARNING: Graph has no nodes.

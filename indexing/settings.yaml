@@ -5,6 +5,7 @@ llm:
   api_key: ${GRAPHRAG_API_KEY}
   type: openai_chat # or azure_openai_chat
   model: mistral-nemo:12b-instruct-2407-fp16
+  # model: mistral-nemo:12b # For 8GB GPUs. Anything less than this size model will provide poor results.
   model_supports_json: true # recommended if this is available for your model.
   max_tokens: 32000
   # request_timeout: 180.0
