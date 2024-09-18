@@ -65,7 +65,13 @@ Reference: https://microsoft.github.io/graphrag/posts/prompt_tuning/auto_prompt_
 
 After reviewing the prompt updates and if you are happy with the results, re-run the indexing (step 7).
 
-### Query 
+### Query CLI
+```bash
+python3 -m graphrag.query --root ./indexing --data ./output/[timestamp]/artifacts --method local "hello"
+```
+
+Needs fixing: https://github.com/microsoft/graphrag/issues/619
+
 Reference: https://microsoft.github.io/graphrag/posts/query/overview/
 
 
