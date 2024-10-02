@@ -65,6 +65,8 @@ Reference: https://microsoft.github.io/graphrag/posts/prompt_tuning/auto_prompt_
 
 After reviewing the prompt updates and if you are happy with the results, re-run the indexing (step 7).
 
+Note: The prompt tuning may contain errors. So make sure you review and update accordingly. Otherwise the LLM may not respond to the prompt with the expected output.
+
 ### Query 
 Reference: https://microsoft.github.io/graphrag/posts/query/overview/
 
