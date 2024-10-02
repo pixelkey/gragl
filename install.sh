@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Delete the existing graphrag directory if it exists
+if [ -d "graphrag" ]; then
+    rm -rf graphrag
+fi
+
 # Clone the GraphRag repository
 git clone https://github.com/microsoft/graphrag.git
 
@@ -21,6 +26,9 @@ poetry install
 
 # Rename the indexing folder to avoid conflicts with the graphrag package
 mv ../indexing ../init/indexing
+
+# Create the indexing folder
+mkdir ../indexing
 
 # Initialize the indexing folder using graphrag.index
 poetry run python3 -m graphrag.index --init --root ../indexing
