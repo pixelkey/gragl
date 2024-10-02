@@ -59,7 +59,7 @@ Reference: https://microsoft.github.io/graphrag/posts/config/init/
 You can auto-tune your prompts to be more relevant to your content's domain.
 Note: The output folder populated from the last step is needed for this to work.
 ```bash
-python3 -m graphrag.prompt_tune --root ./indexing --config ./settings.yaml --no-entity-types
+python3 -m graphrag.prompt_tune --root ./indexing --config ./indexing/settings.yaml --no-entity-types
 ```
 Reference: https://microsoft.github.io/graphrag/posts/prompt_tuning/auto_prompt_tuning/
 
