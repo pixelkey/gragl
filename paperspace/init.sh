@@ -6,6 +6,11 @@
 # Change to /notebooks directory
 cd /notebooks
 
+# Clone the GraphRag repository if it does not exist
+if [ ! -d "graphrag" ]; then
+    git clone https://github.com/pixelkey/gragl.git
+fi
+
 # Define the Ollama model directory
 MODEL_DIR="/notebooks/ollama_models"
 
